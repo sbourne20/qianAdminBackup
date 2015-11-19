@@ -1,0 +1,54 @@
+(function () {
+    'use strict';
+
+    angular
+        .module('qianApp')
+        .factory('CurrencyService', CurrencyService);
+
+    CurrencyService.$inject = ['$http'];
+
+    function CurrencyService($http) {
+        var service = {};
+
+
+
+        $http.defaults.headers.common['X-DreamFactory-Application-Name'] = 'qianApp'; //default header for X-DreamFactory-Application-Name
+
+
+        service.GetCurrency = GetCurrency;
+        return service;
+
+        function GetCurrency() {
+
+
+            return   $http({
+                method: 'get',
+                url: 'https://sgproject001.bit-clicks.com:443/rest/qian/_proc/retrieve_rates',
+                headers: {
+                    'X-DreamFactory-Application-Name': "qianApp"
+                },
+                data: {
+                    "params": [
+                        {
+                            "name": "stats",
+                            "param_type": "IN",
+                            "value": "'ACTIVE'"
+                        }
+                    ],
+                    "schema": {
+                        "STATUS": "varchar",
+                        "ERROR_CODE": "varchar",
+                        "MESSAGE": "varchar"
+                    },
+                    "wrapper": "record"
+                }
+            }).then(handleSuccess, handleError('Error getting currency'));
+
+
+        }
+
+
+
+    }
+
+})();
