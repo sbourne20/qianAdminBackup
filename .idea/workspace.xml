@@ -2,34 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d5dcfeb1-ec1d-46b9-b485-92a640bbae10" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Views/transaksi/print/print.trx.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Views/transaksi/print/print.trxcont.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Views/transaksi/print/xxx.html" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/service/akun.service.js" afterPath="$PROJECT_DIR$/assets/service/akun.service.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.js" afterPath="$PROJECT_DIR$/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/service/authentication.service.js" afterPath="$PROJECT_DIR$/assets/service/authentication.service.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.js" afterPath="$PROJECT_DIR$/assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/global/plugins/bootstrap-modal/css/bootstrap-modal-bs3patch.css" afterPath="$PROJECT_DIR$/assets/global/plugins/bootstrap-modal/css/bootstrap-modal-bs3patch.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/global/plugins/bootstrap-modal/css/bootstrap-modal.css" afterPath="$PROJECT_DIR$/assets/global/plugins/bootstrap-modal/css/bootstrap-modal.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/global/plugins/bootstrap/css/bootstrap.css" afterPath="$PROJECT_DIR$/assets/global/plugins/bootstrap/css/bootstrap.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/commonfunc.js" afterPath="$PROJECT_DIR$/js/commonfunc.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/service/currency.service.js" afterPath="$PROJECT_DIR$/assets/service/currency.service.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/admin/layout3/css/custom.css" afterPath="$PROJECT_DIR$/assets/admin/layout3/css/custom.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/global/css/custom.css" afterPath="$PROJECT_DIR$/assets/global/css/custom.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/global/plugins/angularjs/plugins/fcsaNumber.min.js" afterPath="$PROJECT_DIR$/assets/global/plugins/angularjs/plugins/fcsaNumber.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/tpl/footer.html" afterPath="$PROJECT_DIR$/assets/tpl/footer.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/tpl/header.html" afterPath="$PROJECT_DIR$/assets/tpl/header.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/global/plugins/jqwidgets/styles/jqx.base.css" afterPath="$PROJECT_DIR$/assets/global/plugins/jqwidgets/styles/jqx.base.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/admin/layout3/scripts/layout.js" afterPath="$PROJECT_DIR$/assets/admin/layout3/scripts/layout.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/admin/pages/css/login-soft.css" afterPath="$PROJECT_DIR$/assets/admin/pages/css/login-soft.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/global/scripts/metronic.js" afterPath="$PROJECT_DIR$/assets/global/scripts/metronic.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/service/pecahan.service.js" afterPath="$PROJECT_DIR$/assets/service/pecahan.service.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/service/rate.service.js" afterPath="$PROJECT_DIR$/assets/service/rate.service.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/service/stok.service.js" afterPath="$PROJECT_DIR$/assets/service/stok.service.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test.html" afterPath="$PROJECT_DIR$/test.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/service/transaksi.service.js" afterPath="$PROJECT_DIR$/assets/service/transaksi.service.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/service/backup/transaksi.service.js" afterPath="$PROJECT_DIR$/assets/service/backup/transaksi.service.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="QianAdmin.iws" />
@@ -91,12 +63,27 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.72">
-              <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="21" column="4" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="4" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="transaksi.mdl.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/views/transaksi/transaksi.mdl.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.7154742">
+              <caret line="430" column="98" selection-start-line="430" selection-start-column="4" selection-end-line="430" selection-end-column="98" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#3;n#div#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#form#0;n#div#1;n#div#0;n#div#1;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#form#0;n#div#1;n#div#0;n#div#1;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#form#0;n#div#1;n#div#0;n#div#1;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -503,24 +490,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="QianAdmin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="QianAdmin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="img" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="Scratches" />
@@ -633,18 +602,25 @@
       <option name="number" value="Default" />
       <updated>1447827951931</updated>
     </task>
+    <task id="LOCAL-00001" summary="ok">
+      <created>1450088689924</created>
+      <option name="number" value="00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1450088689924</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1366" height="745" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.41500765" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24981412" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17843866" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17843866" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23964497" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -995,19 +971,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/transaksi/transaksi.mdl.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.70149255">
-          <caret line="431" column="112" selection-start-line="431" selection-start-column="112" selection-end-line="431" selection-end-column="112" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#3;n#div#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#form#0;n#div#1;n#div#0;n#div#1;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#form#0;n#div#1;n#div#0;n#div#1;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#form#0;n#div#1;n#div#0;n#div#1;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/transaksi/transaksi.mdl.ctl.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="9.6650715">
@@ -1050,9 +1013,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.72">
-          <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="21" column="4" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="4" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/transaksi/transaksi.mdl.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7154742">
+          <caret line="430" column="98" selection-start-line="430" selection-start-column="4" selection-end-line="430" selection-end-column="98" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#3;n#div#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#form#0;n#div#1;n#div#0;n#div#1;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#form#0;n#div#1;n#div#0;n#div#1;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#form#0;n#div#1;n#div#0;n#div#1;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
