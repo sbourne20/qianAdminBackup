@@ -1,0 +1,437 @@
+<div id="modalTrx">
+<div class="modal-header">
+    <button type="button" class="close" ng-click="saveClose()" data-dismiss="modal" aria-hidden="true"></button>
+    <h4 class="modal-title">Transaksi Jual/Beli Mata Uang Asing</h4>
+</div>
+<div class="modal-body">
+    <ul class="nav nav-tabs">
+        <li class="active">
+            <a ng-href="#tab_1_1" ng-click="tabClick('1_1')" data-toggle="tab">
+                (1) Cari Nasabah </a>
+        </li>
+        <li >
+            <!--<a href="#tab_1_2" onclick="return false;" data-toggle="tab">-->
+            <a href="#tab_1_2" ng-click="tabClick('1_2')" data-toggle="tab">
+                (2) Transaksi </a>
+        </li>
+    </ul>
+    <div class="tab-content">
+        <div class="tab-pane fade active in" id="tab_1_1">
+            <div class="tab-pane" id="tab_2">
+                <div class="portlet box green">
+                    <div class="portlet-title">
+                        <div class="caption">
+                            <i class="fa fa-gift"></i>Cari Data Nasabah
+                        </div>
+                        <div class="tools">
+                            <a href="javascript:;" class="collapse">
+                            </a>
+                            <a href="#portlet-config" data-toggle="modal" class="config">
+                            </a>
+                            <a href="javascript:;" class="reload">
+                            </a>
+                            <a href="javascript:;" class="remove">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="portlet-body form">
+                        <!-- BEGIN FORM-->
+                        <form action="javascript:;" class="form-horizontal">
+                            <div class="form-body">
+                                <h3 class="form-section">Info</h3>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="control-label col-md-3">No. Identitas</label>
+                                            <div class="col-md-9">
+                                                <input type="text" class="form-control" ng-blur="onBlur($event)" ng-model = "nasabah.idnasabah" placeholder="No. KTP/Passpor/SIM/SIUP Perusahaan">
+           <span class="help-block">
+															{{nasabah.resultbox}}</span>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+
+                                        <div class="form-group">
+                                            <label class="control-label col-md-3">Tipe ID</label>
+                                            <div class="col-md-9">
+                                                <div class="btn-group">
+                                                    <label class="btn btn-warning" ng-model="nasabah.idtype" btn-radio="'KTP'">KTP</label>
+                                                    <label class="btn btn-warning" ng-model="nasabah.idtype" btn-radio="'Passpor'">Passpor</label>
+                                                    <label class="btn btn-warning" ng-model="nasabah.idtype" btn-radio="'SIM'">SIM</label>
+                                                    <label class="btn btn-warning" ng-model="nasabah.idtype" btn-radio="'SIUP'">SIUP</label>
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <!--/span-->
+
+                                    <!--/span-->
+                                </div>
+                                <!--/row-->
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="control-label col-md-3">Nama Nasabah</label>
+                                            <div class="col-md-9">
+                                                <input type="text" class="form-control" ng-disabled = "disableForm" ng-model = "nasabah.nama" placeholder="Nama sesuai identitas">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--/span-->
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="control-label col-md-3">Tipe Nasabah</label>
+                                            <div class="col-md-9">
+                                                <div class="btn-group">
+                                                    <label class="btn btn-info" ng-model="nasabah.jenis" btn-radio="'Individu'">Individu</label>
+                                                    <label class="btn btn-info" ng-model="nasabah.jenis" btn-radio="'Perusahaan'">Perusahaan</label>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <!--/span-->
+                                </div>
+                                <!--/row-->
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="control-label col-md-3">No Telp</label>
+                                            <div class="col-md-9">
+                                                <input type="text" ng-disabled = "disableForm" class="form-control" ng-model = "nasabah.phone" placeholder="No yang bisa dihubungi">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--/span-->
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="control-label col-md-3">Notes</label>
+                                            <div class="col-md-9">
+                                                <textarea class="form-control" ng-disabled = "disableForm"  ng-model = "nasabah.notes" placeholder="notes" rows="4" cols="50"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--/span-->
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="control-label col-md-3">Scan Identitas</label>
+                                            <div class="col-md-9">
+
+                                                <form action="#" class="form-horizontal form-bordered">
+                                                    <div class="form-body">
+
+                                                        <div class="form-group ">
+
+                                                                <div class="fileinput fileinput-new" data-provides="fileinput">
+                                                                    <div id="fileinput-prev" class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 200px; height: 150px;">
+                                                                    </div>
+                                                                    <div>
+                                                                            <span class="btn default btn-file">
+                                                                            <span class="fileinput-new">
+                                                                            Select image </span>
+                                                                            <span class="fileinput-exists">
+                                                                            Change </span>
+                                                                            <input type="file" id="file" name="file"  accept='image/*' >
+                                                                            </span>
+                                                                        <a href="#" class="btn red fileinput-exists" data-dismiss="fileinput">
+                                                                            Remove </a>
+                                                                    </div>
+                                                                </div>
+
+
+                                                        </div>
+
+                                                    </div>
+
+                                                </form>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--/span-->
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="control-label col-md-3"></label>
+                                            <div class="col-md-9">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--/span-->
+                                </div>
+
+                                <h3 class="form-section">Alamat</h3>
+                                <!--/row-->
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="control-label col-md-3">Alamat</label>
+                                            <div class="col-md-9">
+                                                <textarea class="form-control" ng-disabled = "disableForm" ng-model = "nasabah.alamat" placeholder="Alamat lengkap sesuai Identitas" rows="5" cols="50"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="control-label col-md-3">Warga Negara</label>
+                                            <div class="col-md-9">
+                                                <input type="text" ng-disabled = "disableForm" class="form-control" ng-model = "nasabah.negara" >
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="form-actions">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="row">
+                                            <div class="col-md-offset-3 col-md-9">
+                                                <button type="button" ng-click="addNasabData()" class="btn green" ng-disabled = "disableForm" >+ Tambah</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        <!-- END FORM-->
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="tab-pane fade" id="tab_1_2">
+            <div class="tab-pane" id="tab_2">
+                <div class="portlet box yellow">
+                    <div class="portlet-title">
+                        <div class="caption">
+                            <i class="fa fa-gift"></i>Master Transaksi
+                        </div>
+                        <div class="tools">
+                            <a href="javascript:;" class="collapse">
+                            </a>
+                            <a href="#portlet-config" data-toggle="modal" class="config">
+                            </a>
+                            <a href="javascript:;" class="reload">
+                            </a>
+                            <a href="javascript:;" class="remove">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="portlet-body form">
+                        <!-- BEGIN FORM-->
+                        <form action="javascript:;" class="form-horizontal">
+                            <div class="form-body">
+                                <h3 class="form-section">Info</h3>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="control-label col-md-3">ID Transaksi</label>
+                                            <div class="col-md-9">
+                                                <input type="text" class="form-control" ng-model = "trxh.trxh_code" ng-disabled = "true" placeholder="">
+           <span class="help-block">
+														</span>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="control-label col-md-3">Tanggal</label>
+                                            <div class="col-md-9">
+                                                <input type="text" class="form-control" ng-disabled = "true" ng-model = "trxh.trxh_date" placeholder="">
+           <span class="help-block">
+														</span>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--/span-->
+
+                                    <!--/span-->
+                                </div>
+                                <!--/row-->
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="control-label col-md-3">Nama Nasabah</label>
+                                            <div class="col-md-9">
+                                                <input type="text" class="form-control" ng-model = "trxh.nama" ng-disabled = "true" placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--/span-->
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="control-label col-md-3">Tipe Transaksi</label>
+                                            <div class="col-md-9">
+                                                <div class="btn-group">
+                                                    <label class="btn red" ng-model="trxh.trxh_tipe" ng-click="changeJenis('Jual')" btn-radio="'Jual'">Jual</label>
+                                                    <label class="btn red" ng-model="trxh.trxh_tipe" ng-click="changeJenis('Beli')" btn-radio="'Beli'">Beli</label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <!--/span-->
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="control-label col-md-3">Total TRX</label>
+                                            <div class="col-md-9">
+                                                <input type="text" class="form-control" fcsa-number="{ }" ng-change="changeJumlah()" ng-model = "trxh.trxh_total" ng-disabled = "true" placeholder="">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--/span-->
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="control-label col-md-3">Jumlah Diterima / Diserahkan</label>
+                                            <div class="col-md-9">
+                                                <input type="text" class="form-control" fcsa-number="{ }" ng-change="changeJumlah()" ng-model = "trxh.trxh_amount" ng-disabled = "disabledTerimaSerah" placeholder="">
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <!--/span-->
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="control-label col-md-3">Kembali</label>
+                                            <div class="col-md-9">
+                                                <input type="text" class="form-control" fcsa-number="{ }" ng-model = "trxh.trxh_kembali" ng-disabled = "true" placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--/span-->
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+
+                                        </div>
+
+                                    </div>
+                                    <!--/span-->
+                                </div>
+                                <!--/row-->
+
+
+                            </div>
+                        </form>
+                        <!-- END FORM-->
+                    </div>
+                </div>
+
+            </div>
+            <div class="tab-pane" id="tab_2">
+                <div class="portlet box blue">
+                    <div class="portlet-title">
+                        <div class="caption">
+                            <i class="fa fa-gift"></i>Detil Transaksi
+                        </div>
+                        <div class="tools">
+                            <a href="javascript:;" class="collapse">
+                            </a>
+                            <a href="#portlet-config" data-toggle="modal" class="config">
+                            </a>
+                            <a href="javascript:;" class="reload">
+                            </a>
+                            <a href="javascript:;" class="remove">
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="portlet-body form">
+                        <!-- BEGIN FORM-->
+                        <form action="javascript:;" class="form-horizontal">
+                            <div class="form-body">
+
+                                <div class="row">
+                                    <div class="col-md-9">
+                                        <button ng-click="addDataTrxd()" class="btn blue">+ Tambah</button>
+                                        <button ng-click="deleteDataTrxd()" class="btn red">- Hapus</button>
+                                        <button ng-click="refreshDataTrxd()" class="btn green">Refresh</button>
+                                    </div>
+                                </div>
+
+
+                                <!--/span-->
+
+                                <!--/span-->
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div style="margin: 5px" align="center">
+                                        <ul class="nav nav-tabs">
+                                            <li class="active">
+                                                <a ng-href="#tab_2_1" onclick="return false;" data-toggle="tab">
+                                                    Transaksi </a>
+                                            </li>
+                                            <li >
+                                                <a href="#tab_2_2" onclick="return false;" data-toggle="tab">
+                                                    Stok </a>
+                                            </li>
+                                        </ul>
+                                        <div class="tab-content">
+                                            <div class="tab-pane fade active in" id="tab_2_1">
+                                              <div id="jqxgridDetil" style="font-size: 11px; font-family: Verdana; "></div>
+                                            </div>
+
+                                            <div class="tab-pane" id="tab_2_2">
+                                                <form action="javascript:;" class="form-horizontal">
+                                                    <div class="form-body">
+                                                        <div class="row">
+                                                            <div class="col-md-1">
+                                                                <button ng-click="pilihStok()" class="btn blue">Pilih Stok</button>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </form>
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <div id="jqxgridStok" style="font-size: 11px; font-family: Verdana; "></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+
+                    <!-- END FORM-->
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn blue" ng-click = "print()">Print</button>
+    <button type="button" class="btn green" ng-click = "post()" data-dismiss="modal">Post</button>
+    <button type="button" class="btn default" ng-click = "saveClose()"data-dismiss="modal">Save & Close</button>
+
+</div>
+
+</div>
+

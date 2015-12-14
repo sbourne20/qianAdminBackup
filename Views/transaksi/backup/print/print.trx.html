@@ -1,0 +1,44 @@
+<style>
+
+    @media print {
+        body * {
+            visibility:hidden;
+        }
+        #printSection, #printSection * {
+            visibility:visible;
+        }
+        #printSection {
+            top:0;
+
+            border: 2px solid;
+            width: 620px;
+            margins: 0px;
+        }
+    }
+
+    .modal {
+        left:-40px;
+        width:1100px;
+    }
+</style>
+<div class="page-content">
+    <div class="container">
+        <!-- BEGIN PAGE CONTENT INNER -->
+        <div class="portlet light">
+            <div class="portlet-body">
+                <div id="printSection">
+                    <div>test</div>
+                    <br>
+                    <a class="btn btn-lg blue hidden-print margin-bottom-5" onclick="javascript:window.print();">
+                        Print <i class="fa fa-print"></i>
+                    </a>
+                    <a class="btn btn-lg green hidden-print margin-bottom-5">
+                        Submit Your Invoice <i class="fa fa-check"></i>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+        <!-- END PAGE CONTENT INNER -->
+    </div>
+</div>

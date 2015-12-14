@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<!--
+Template Name: Metronic - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.3.5
+Version: 4.1.0
+Author: KeenThemes
+Website: http://www.keenthemes.com/
+Contact: support@keenthemes.com
+Follow: www.twitter.com/keenthemes
+Like: www.facebook.com/keenthemes
+Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes
+License: You must have a valid license purchased only from themeforest(the above link) in order to legally use the theme for your project.
+-->
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+<!-- BEGIN HEAD -->
+<head>
+    <meta charset="utf-8"/>
+    <title>Homeeah Valas</title>
+    <!-- BEGIN GLOBAL MANDATORY STYLES -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css">
+    <link href="./assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="./assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css">
+    <link href="./assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="./assets/global/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css">
+    <!-- END GLOBAL MANDATORY STYLES -->
+    <!-- BEGIN PAGE LEVEL STYLES -->
+    <link href="./assets/admin/pages/css/invoice.css" rel="stylesheet" type="text/css"/>
+    <!-- END PAGE LEVEL STYLES -->
+    <!-- BEGIN THEME STYLES -->
+    <link href="./assets/global/css/components-rounded.css" id="style_components" rel="stylesheet" type="text/css">
+    <link href="./assets/global/css/plugins.css" rel="stylesheet" type="text/css">
+    <link href="./assets/admin/layout3/css/layout.css" rel="stylesheet" type="text/css">
+    <link href="./assets/admin/layout3/css/themes/default.css" rel="stylesheet" type="text/css" id="style_color">
+    <link href="./assets/admin/layout3/css/custom.css" rel="stylesheet" type="text/css">
+    <!-- END THEME STYLES -->
+    <link rel="shortcut icon" href="favicon.ico"/>
+</head>
+<!-- END HEAD -->
+<!-- BEGIN BODY -->
+<!-- DOC: Apply "page-header-menu-fixed" class to set the mega menu fixed  -->
+<!-- DOC: Apply "page-header-top-fixed" class to set the top menu fixed  -->
+<style>
+    @media print {
+        /*body * {
+            visibility: hidden;
+        }*/
+        @page
+        {
+            size: auto;   /* auto is the initial value */
+            margin: 15px;  /* this affects the margin in the printer settings */
+			background-color: white !important;
+        }
+
+        body { margin: 1.6cm; 
+		
+		}
+        #Header, #Footer, .copyright { display: none !important; }
+        #print-content * {
+            visibility: visible;
+        }
+        .modal{
+            position: absolute;
+            height: 1000px;
+            width: 100%;           
+        }
+        .printarea{
+            margin:10px;
+        }
+    }
+
+.logo2 {
+	float: left;
+	height: 90px;
+	width: 112px;
+	border-bottom-width: 1px;
+	-webkit-print-color-adjust: exact;
+	border-bottom-style: solid;
+	border-bottom-color: #000;
+}
+#divTitle {
+	float: left;
+	height: 80px;
+	width: 550px;
+	color: #FFF;
+	font-family: Calibri;
+	font-size: 14px;
+	text-transform: capitalize;
+	text-align: center;
+	border-bottom-color: #000;
+	-webkit-print-color-adjust: exact;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	margin-top: 10px;
+
+}
+#divTitleText {
+	font-family: Calibri;
+	font-size: 14px;
+	color: #000;
+	margin: 5px;
+	text-align: left;
+	font-weight: bold;
+}
+#logoImg {
+	height: auto;
+	width: auto;
+	margin: 10px;
+}
+#divTitleText {
+}
+.divTitleTextDetail {
+	font-family: Calibri;
+	font-size: 10px;
+	font-style: normal;
+	color: #000;
+	text-align: left;
+	letter-spacing: normal;
+	vertical-align: top;
+	word-spacing: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+}
+    .divTitleTable {
+        font-family: Calibri;
+        font-size: 10px;
+        font-style: normal;
+        color: #000;
+    }
+.divFooter {
+	font-family: Calibri;
+	font-size: 8px;
+	font-style: normal;
+	color: #000;
+	text-align: left;
+	letter-spacing: normal;
+	vertical-align: top;
+	word-spacing: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	margin: 5px;
+}
+#subtitle {
+	border: 1px solid #000;
+	height: 50px;
+	width: 100%;
+	float: none;
+}
+#row2 {
+	float: none;
+	/*border: 1px solid #000;*/
+	height: auto;
+	width: 664px;	
+}
+#row3 {
+	float: none;
+	border: 1px solid #000;
+	height: auto;
+	width: 664px;	
+}
+    #row4 {
+        float: none;
+        text-align: right;
+        height: auto;
+        width: 664px;
+    }
+    #row4col1 {
+        float: left;
+        text-align: left;
+        font-size: 10px;
+        font-style: normal;
+        font-weight: normal;
+        font-variant: normal;
+        height: auto;
+        width: 30%;
+    }
+#subtitle1 {
+	float: left;
+	width: 32.5%;
+	font-family: Calibri;
+	font-size: 10px;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+}
+#subtitle2 {
+	float: left;
+	width: 35%;
+	font-family: Calibri;
+	font-size: 10px;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;	
+}
+#customerdetail {
+	float: left;
+	width: 19%;
+	font-family: Calibri;
+	font-size: 10px;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;	
+}
+
+#customerdetail2 {
+	float: left;
+	width: 27%;
+	font-family: Calibri;
+	font-size: 10px;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;	
+}
+#customerdetail3 {
+	float: left;
+	width: 25%;
+	height: 30px;
+	font-family: Calibri;
+	font-size: 10px;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;	
+}
+#customerTable {
+	font-family: Calibri;
+	font-size: 10px;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;	
+	}
+
+    #total1{
+        font-family: Calibri;
+        font-size: 10px;
+        font-style: normal;
+        color: #000;
+        text-align: right;
+        letter-spacing: normal;
+        vertical-align: top;
+        word-spacing: normal;
+        font-weight: normal;
+        font-variant: normal;
+        text-transform: none;
+        width: 30%;
+    }
+
+
+</style>
+<body>
+<!-- BEGIN HEADER -->
+
+<!-- END HEADER -->
+<!-- BEGIN PAGE CONTAINER -->
+<div class="printarea">
+    <div class="page-container">
+        <!-- BEGIN PAGE HEAD -->
+
+        <!-- END PAGE HEAD -->
+        <!-- BEGIN PAGE CONTENT -->
+        <div class="page-content">
+          <div id="container" class="container">
+            <div id="row2" class="row2">
+                <div id="logo" class="logo2"><div id="logoImg" class="logoImg"><img src="./assets/img/logohv.png" width="92" height="71"></div></div>
+                <div id="divTitle" class="divTitle">
+                  <div id="divTitleText">PT. HOMEEAH VALAS INTI<br>
+                  <div class="divTitleTextDetail" id="divTitleTextDetail">
+                    Wisma BSG Lt. 3A - Jl. Abdul Muis No. 40 - Jakarta Pusat 10160<br>
+                    Phone: 021-3514267 Fax: 021-3514266<br>
+                    Email : contact@homeeahvalas.co.id  |  Web: www.homeeahvalas.co.id
+                  </div>
+                  </div>
+
+                </div>
+
+
+            </div>
+            
+             <div id="row2" class="row2">
+               <div id="subtitle1"><b>Transaksi/Transaction : </b>{{trx[0].trxh_tipe}}</div>
+               <div id="subtitle1"><b>TRX No : </b> &nbsp;{{trx[0].trxh_code}}</div>
+               <div id="subtitle2"><b>Tanggal/Date :</b>&nbsp;{{trx[0].trxh_date}}</div>
+             </div>
+             <div id="row2" class="row2">
+           	   <table width="100%" border="0" cellspacing="0" cellpadding="0" class="divTitleTextDetail">
+  <tr>
+    <td width="25%"><strong>ID Nasabah:</strong></td>
+    <td width="25%"><strong>Nama Nasabah:</strong></td>
+    <td width="25%"><strong>Alamat:</strong></td>
+    <td width="25%"><strong>Telp:</strong></td>
+  </tr>
+  <tr>
+    <td>{{trx[0].idnasabah}}</td>
+    <td>{{trx[0].nama}}</td>
+    <td>{{trx[0].alamat}}</td>
+    <td>{{trx[0].phone}}</td>
+  </tr>
+  <tr>
+    <td width="25%"><strong>Tempat/Tanggal Lahir:</strong></td>
+    <td width="25%"><strong>Pekerjaan:</strong></td>
+    <td width="25%"><strong>Tujuan Transaksi:</strong></td>
+    <td width="25%"><strong>Sumber Dana:</strong></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+            </div>
+
+             <div id="row2" class="row2">
+              <table class="table table-striped table-hover divTitleTable">
+                                    <thead>
+                                    <tr>
+                                        <th style="font-size:11px">
+                                            #
+                                        </th>
+                                        <th style="font-size:11px">
+                                            Mata Uang
+                                        </th>
+                                        <th style="font-size:11px" class="hidden-480">
+                                            Pecahan
+                                        </th>
+                                        <th style="text-align: right; font-size:11px">
+                                            Harga Satuan
+                                        </th>
+                                        <th style="text-align: right; font-size:11px">
+                                            Jumlah
+                                        </th>
+                                        <th style="text-align: right; font-size:11px" >
+                                            Total
+                                        </th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr ng-repeat="tx in trx">
+                                        <td>
+                                            {{tx.norow}}
+                                        </td>
+                                        <td>
+                                            {{tx.curname}}
+                                        </td>
+                                        <td class="hidden-480">
+                                            {{tx.pecahan}}
+                                        </td>
+                                        <td align="right" class="hidden-480">
+                                            {{tx.trxd_satuan | number:0}}
+                                        </td>
+                                        <td align="right" class="hidden-480">
+                                            {{tx.trxd_jumlah | number:0}}
+                                        </td>
+                                        <td align="right" class="hidden-480">
+                                            {{tx.trxd_total | number:0}}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+
+                                        </td>
+                                        <td>
+
+                                        </td>
+                                        <td class="hidden-480">
+                                            <b>Jumlah Diterima / Diberikan : </b>Rp.{{trx[0].trxh_amount | number:0}}
+                                        </td>
+                                        <td class="hidden-480">
+                                            <b>Kembali : </b>Rp.{{trx[0].trxh_kembali | number:0}}
+                                        </td>
+                                        <td align="right" class="hidden-480">
+
+                                        </td>
+                                        <td align="right">
+                                            <b>Total : Rp.{{trx[0].trxh_total | number:0}}</b>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+               </table>
+
+             </div>
+
+              <div id="row3" class="row3">
+               <div class="divFooter">
+               	Dengan ini, Saya menyatakan bahwa pembelian valuta asing terhadap rupiah tidak melebihi dari Rp.100.000.000 (Seratus juta rupiah) atau ekuivalen dalam mata uang asing dalam satu bulan kalender. Dan apabila pembelian saya melebihi Rp.100.000.000 (Seratus juta rupiah), maka saya akan menyerahkan Dokumen Underlying dan menanda-tangani Surat pernyataan yang diwajibkan oleh Bank Indonesia.<br>
+                Saya berjanji untuk membebaskan dan mengganti rugi kepada PT. Homeeah Valas Inti dari dan segala macam kewajiban, tuntutan, gugatan, permintaan, proses pengadilan, kerugian, biaya-biaya dan kewajiban-kewajiban lain dalam bentuk apapun yang mungkin diderita oleh PT Homeeah Valas Inti sehubungan dengan tindakan-tindakan yang dilakukan PT. Homeeah Valas Inti berdasarkan pernyataan tersebut diatas.
+               </div>
+          </div>
+
+              <div id="row4" class="row4">
+                  <div id="row4col1" class="row4col1">
+                  <br>
+                      Jakarta,
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                  ( {{trx[0].nama}} )<br>
+                  </div>
+                  <div id="row4col1" class="row4col1">
+                     &nbsp;
+                  </div>
+                  <div id="row4col1" class="row4col1">
+
+                  </div>
+
+
+
+              </div>
+            
+          </div>
+      </div>
+        <!-- END PAGE CONTENT -->
+  </div>
+</div>
+<div id="header" style="display:none; background-color:White;"></div>
+<div id="footer" style="display:none; background-color:White;">
+
+</div>
+<script type="text/javascript">
+    //window.print();
+    //window.close();
+    $(document).ready(function(){
+        setTimeout(function () {
+            window.print();
+            window.close();
+        },1000);
+    });
+</script>
+
+</body>
+<!-- END BODY -->
+</html>
