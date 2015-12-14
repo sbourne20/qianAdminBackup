@@ -126,6 +126,7 @@
 
             if (aemethod == 'POSTNASAB') {
                 pMethod = "POST"
+                //"trxh_idcopy" : trxh.dataimage
                 url = DREAM_FACTORY_URL + '/rest/qian/nasab'
                 data = {
                     "record": rowdata

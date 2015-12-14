@@ -38,6 +38,7 @@
     }
 
     this.$preview = this.$element.find('.fileinput-preview')
+
     var height = this.$preview.css('height')
     if (this.$preview.css('display') !== 'inline' && height !== '0px' && height !== 'none') {
       this.$preview.css('line-height', height)
@@ -90,7 +91,7 @@
         
         // if parent has max-height, using `(max-)height: 100%` on child doesn't take padding and border into account
         if (preview.css('max-height') != 'none') $img.css('max-height', parseInt(preview.css('max-height'), 10) - parseInt(preview.css('padding-top'), 10) - parseInt(preview.css('padding-bottom'), 10)  - parseInt(preview.css('border-top'), 10) - parseInt(preview.css('border-bottom'), 10))
-        
+        //console.log (preview);
         preview.html($img)
         element.addClass('fileinput-exists').removeClass('fileinput-new')
 

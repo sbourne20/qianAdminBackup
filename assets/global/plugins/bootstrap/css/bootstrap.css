@@ -5923,6 +5923,7 @@ button.close {
   overflow: hidden;
   -webkit-overflow-scrolling: touch;
   outline: 0;
+  display: block !important;
 }
 .modal.fade .modal-dialog {
   -webkit-transition: -webkit-transform .3s ease-out;
@@ -5947,6 +5948,7 @@ button.close {
   position: relative;
   width: auto;
   margin: 10px;
+  overflow-y: initial !important
 }
 .modal-content {
   position: relative;
@@ -5992,6 +5994,8 @@ button.close {
 .modal-body {
   position: relative;
   padding: 15px;
+  height: 250px;
+  overflow-y: auto;
 }
 .modal-footer {
   padding: 15px;

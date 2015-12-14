@@ -19,8 +19,10 @@ body.modal-open,
   bottom: auto;
   right: auto;
   padding: 0;
-  width: 500px;
-  margin-left: -250px;
+ /* width: 500px; --- iwan*/
+  width: 98%;
+  /*margin-left: -250px;*/
+  margin : 10px; /*iwan*/
   background-color: #ffffff;
   border: 1px solid #999999;
   border: 1px solid rgba(0, 0, 0, 0.2);
@@ -28,6 +30,7 @@ body.modal-open,
   -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
   box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
   background-clip: padding-box;
+  height: 530px; /*iwan*/
 }
 
 .modal.container {

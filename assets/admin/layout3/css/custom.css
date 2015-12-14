@@ -17,3 +17,12 @@ Rounded Portlets
 	border-radius: 0px 0px 4px 4px !important;
 }
 */
+
+.app-modal-window .modal-dialog {
+	width: 1000px;
+}
+
+.app-pmodal-window .modal-dialog {
+	width: 1000px;
+	height:490px;
+}

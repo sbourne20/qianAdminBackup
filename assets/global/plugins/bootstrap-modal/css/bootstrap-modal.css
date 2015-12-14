@@ -46,7 +46,8 @@
 }
 
 .modal.fade {
-	top: -100%;
+	/*top: -100%; --- iwan*/
+	top: 5%
 	-webkit-transition: opacity 0.3s linear, top 0.3s ease-out, bottom 0.3s ease-out, margin-top 0.3s ease-out;	
 	   -moz-transition: opacity 0.3s linear, top 0.3s ease-out, bottom 0.3s ease-out, margin-top 0.3s ease-out;
 	     -o-transition: opacity 0.3s linear, top 0.3s ease-out, bottom 0.3s ease-out, margin-top 0.3s ease-out;
@@ -54,7 +55,8 @@
 }
 
 .modal.fade.in {
-	top: 50%;
+	/*top: 50%; --iwan */
+	top: 5%
 }
 
 .modal-body {

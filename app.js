@@ -3,12 +3,16 @@
  ***/
 
 /* Metronic App */
-var MetronicApp = angular.module("qianAdminApp", [
+var MetronicApp = angular.module("MetronicApp", [
     "ui.router",
     "ui.bootstrap",
     "oc.lazyLoad",
-    "ngSanitize"
+    "ngSanitize",
+    "ngCookies",
+    "fcsa-number"
 ]);
+
+MetronicApp.constant('DREAM_FACTORY_URL', 'https://sgproject001.bit-clicks.com:443');
 
 /* Configure ocLazyLoader(refer: https://github.com/ocombe/ocLazyLoad) */
 MetronicApp.config(['$ocLazyLoadProvider', function($ocLazyLoadProvider) {
@@ -18,7 +22,7 @@ MetronicApp.config(['$ocLazyLoadProvider', function($ocLazyLoadProvider) {
 }]);
 
 /********************************************
- BEGIN: BREAKING CHANGE in AngularJS v1.3.x:
+ BEGIN: BREAKING CHANGE in AngularJS v1.3.x:ready
  *********************************************/
 /**
  `$controller` will no longer look for controllers on `window`.
@@ -121,20 +125,19 @@ MetronicApp.controller('FooterController', ['$scope', function($scope) {
 MetronicApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
 
     // Redirect any unmatched url
-    $urlRouterProvider.otherwise("/dashboard.html");
 
     $stateProvider
 
         // Dashboard
-        .state('dashboard', {
-            url: "/dashboard.html",
+        .state('home.dashboard', {
+            url: "/dashboard",
             templateUrl: "views/dashboard.html",
             data: {pageTitle: 'Dashboard', pageSubTitle: 'statistics & reports'},
             controller: "DashboardController",
-            resolve: {
+            /*resolve: {
                 deps: ['$ocLazyLoad', function($ocLazyLoad) {
                     return $ocLazyLoad.load({
-                        name: 'qianAdminApp',
+                        name: 'MetronicApp',
                         insertBefore: '#ng_load_plugins_before', // load the above css files before '#ng_load_plugins_before'
                         files: [
                             './assets/global/plugins/morris/morris.css',
@@ -147,18 +150,106 @@ MetronicApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvi
                             './assets/admin/pages/scripts/index3.js',
                             './assets/admin/pages/scripts/tasks.js',
 
-                            './js/controllers/DashboardController.js'
+                            'js/controllers/DashboardController.js'
                         ]
                     });
                 }]
-            }
+            }*/
         })
 
+        .state('home.currency', {
+            url: "/currency",
+            templateUrl: "./views/currency/currency.html",
+            data: {pageTitle: 'Mata Uang', pageSubTitle: 'Tambah/Rubah mata uang terbaru'},
+            controller: "CurrencyController",
 
+        })
 
+        .state('home.rate', {
+            url: "/rate",
+            templateUrl: "./views/rate/rate.html",
+            data: {pageTitle: 'Kurs', pageSubTitle: 'Rubah kurs terbaru'},
+            controller: "rateController",
+
+        })
+        .state('home.pecahan', {
+            url: "/pecahan",
+            templateUrl: "./views/pecahan/pecahan.html",
+            data: {pageTitle: 'Pecahan', pageSubTitle: 'uang asing'},
+            controller: "pecahanController",
+
+        })
+        .state('home.akun', {
+            url: "/akun",
+            templateUrl: "./views/akun/akun.html",
+            data: {pageTitle: 'Akun', pageSubTitle: 'chart of account'},
+            controller: "akunController",
+
+        })
+        .state('home.transaksi', {
+            url: "/transaksi",
+            templateUrl: "./views/transaksi/transaksi.html",
+            data: {pageTitle: 'Transaksi', pageSubTitle: 'Jual / Beli Uang Asing'},
+            controller: "transaksiController",
+            controllerAs: 'vm'
+
+        })
+        .state('test', {
+            url: "/test",
+            templateUrl: "./views/test/test.html",
+            controller: "testController",
+
+        })
+        .state('ptransaksi', {
+            url: "/ptransaksi",
+            templateUrl: "./views/ptransaksi/ptransaksi.html",
+            controller: "ptransaksiController",
+
+        })
+        .state("login",{
+            url: "/login",
+            templateUrl:"views/login/login.html",
+            css: 'assets/admin/pages/css/login.css',
+            controller: "LoginController",
+            controllerAs: 'vm'
+        })
+
+        .state("#tab_1_2",{
+            url: "/#tab_1_2"
+        })
+
+        .state("home",{
+            url: "/home",
+            controller: 'HomeController',
+            templateUrl: 'views/home/home.html',
+            controllerAs: 'vm'
+        })
+
+    $urlRouterProvider.otherwise("/home/dashboard");
+    //console.log ($stateProvider.state);
 }]);
 
 /* Init global settings and run the app */
-MetronicApp.run(["$rootScope", "settings", "$state", function($rootScope, settings, $state) {
+MetronicApp.run(["$rootScope", "settings", "$state", "$location","$cookieStore","$http","$stateParams",
+    function($rootScope, settings, $state, $location,$cookieStore,$http,$stateParams) {
     $rootScope.$state = $state; // state to be accessed from view
+
+    $rootScope.$stateParams = $stateParams;
+
+    // keep user logged in after page refresh
+    $rootScope.globals = $cookieStore.get('globals') || {};
+    if ($rootScope.globals.currentUser) {
+        $http.defaults.headers.common['Authorization'] = 'Basic ' + $rootScope.globals.currentUser.authdata; // jshint ignore:line
+
+    }
+
+    $rootScope.$on('$locationChangeStart', function (event, next, current) {
+        // redirect to login page if not logged in and trying to access a restricted page
+        var restrictedPage = $.inArray($location.path(), ['/login']) === -1;
+        var loggedIn = $rootScope.globals.currentUser;
+        if (restrictedPage && !loggedIn) {
+            $location.path('/login');
+        }
+    });
+
 }]);

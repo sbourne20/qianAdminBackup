@@ -3,18 +3,17 @@
 
     angular
         .module('MetronicApp')
-        .factory('akunService', akunService);
+        .factory('stokService', stokService);
 
-    akunService.$inject = ['$http','DREAM_FACTORY_URL'];
+    stokService.$inject = ['$http','DREAM_FACTORY_URL'];
 
-    function akunService($http, DREAM_FACTORY_URL) {
+    function stokService($http, DREAM_FACTORY_URL) {
         var service = {};
-        $http.defaults.headers.common['X-DreamFactory-Application-Name'] = 'MetronicApp'; //default header for X-DreamFactory-Application-Name
 
         service.initData = initData;
         service.addedit = addedit;
-
         service.deleteData = deleteData;
+        service.fetchStok = fetchStok;
 
         return service;
 
@@ -108,33 +107,45 @@
 
         }
 
-        function initData(){
-
-
-
+        function initData(curid){
 
             var source =
             {
                 datatype: "json",
                 type : "GET",
-
+                data : {
+                    "params": [
+                        {
+                            "name": "curid",
+                            "param_type": "IN",
+                            "value": curid
+                        }
+                    ],
+                    "schema": {
+                        "STATUS": "varchar",
+                        "ERROR_CODE": "varchar",
+                        "MESSAGE": "varchar"
+                    },
+                    "wrapper": "record"
+                },
                 datafields: [
-                    { name: 'akun_code' },
-                    { name: 'akun_group' },
-                    { name: 'akun_name' }
+                    { name: 'id' },
+                    { name: 'pecahan_id' },
+                    { name: 'qty' },
+                    { name: 'pecahan' },
+                    { name: 'curname' }
 
                 ],
                 id: 'id',
-                url: DREAM_FACTORY_URL+ "/rest/qian/akun?filter=stats%3D'ACTIVE'&order=akun_code",
+                url: DREAM_FACTORY_URL+ "/rest/qian/_proc/fetchStok",
                 root: 'record',
                 updaterow: function (rowid, rowdata, commit) {
 
-                    addedit('PATCH',rowid, rowdata);
-                    commit(true);
+                    //addedit('PATCH',rowid, rowdata);
+                    //commit(true);
                 }
 
             };
-
             var dataAdapter = new $.jqx.dataAdapter(source, {
                 beforeSend: function (request) {
                     request.setRequestHeader("X-DreamFactory-Application-Name", "myapp");
@@ -142,40 +153,48 @@
 
                 }
             });
-            var cellclass1 = function (row, columnfield, value) {
-                    return "noeditedCell";
-            }
 
-            var setEditableCells = function(row, datafield, columntype) {
-                var xstatus = $('#jqxgrid').jqxGrid('getcellvalue', row, "nstampdt");
-                //console.log (xstatus);
-                if (xstatus==null){
-                    return false;
-                } else{
-                    return true;
-                }
-
-            }
-
-
-            $("#jqxgrid").jqxGrid(
-                {
-                    width: "100%",
-                    source: dataAdapter,
-                    columnsresize: true,
-                    editable: true,
-                    selectionmode: 'multiplecellsadvanced',
-                    editmode: 'click',
-                    columns: [
-                        { text: 'Akun ID', dataField: 'akun_code', width: 150 },
-                        { text: 'Akun Group', dataField: 'akun_group', width: 100 },
-                        { text: 'Akun Name', dataField: 'akun_name', width: 300 },
-
-                    ]
-                });
-
-
+            return dataAdapter;
         }
+
+        function fetchStok(){
+
+
+                var data = {
+                    "params": [
+                        {
+                            "name": "curid",
+                            "param_type": "IN",
+                            "value": 0
+                        }
+                    ],
+                    "schema": {
+                        "STATUS": "varchar",
+                        "ERROR_CODE": "varchar",
+                        "MESSAGE": "varchar"
+                    },
+                    "wrapper": "record"
+                };
+
+
+            var url =  DREAM_FACTORY_URL+ "/rest/qian/_proc/fetchStok";
+
+            return $http({
+                method: "POST",
+                url: url,
+                headers: {
+                    'X-DreamFactory-Application-Name': "myapp"
+                },
+                data: data
+
+
+            }).then(handleSuccessData, handleError('Error updating data'));
+        }
+
+        function handleSuccessData(data) {
+            return data;
+        }
+
 
         function handleSuccess(data) {
             return true;

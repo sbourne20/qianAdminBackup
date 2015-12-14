@@ -20,7 +20,7 @@
 
         function initController() {
             //initData();
-            pecahanService.initData();
+            akunService.initData();
 
 
         }
@@ -30,7 +30,7 @@
         }
 
         $scope.addData = function (id) {
-            if (pecahanService.addedit('POST',0,0)) {
+            if (akunService.addedit('POST',0,0)) {
                 setTimeout(function () {
                     $('#jqxgrid').jqxGrid('updatebounddata')
                 }, 500);
@@ -43,7 +43,7 @@
             var selcell = $("#jqxgrid").jqxGrid('getselectedcell');
             var valueId = $('#jqxgrid').jqxGrid('getcellvalue', selcell.rowindex, 'uid');
 
-           if (pecahanService.deleteData(valueId)) {
+           if (akunService.deleteData(valueId)) {
                setTimeout(function() {
                    $('#jqxgrid').jqxGrid('updatebounddata')
                },500);

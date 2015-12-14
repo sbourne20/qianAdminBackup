@@ -3,11 +3,11 @@
 
     angular
         .module('MetronicApp')
-        .factory('pecahanService', pecahanService);
+        .factory('akunService', akunService);
 
-    pecahanService.$inject = ['$http','DREAM_FACTORY_URL'];
+    akunService.$inject = ['$http','DREAM_FACTORY_URL'];
 
-    function pecahanService($http, DREAM_FACTORY_URL) {
+    function akunService($http, DREAM_FACTORY_URL) {
         var service = {};
         $http.defaults.headers.common['X-DreamFactory-Application-Name'] = 'MetronicApp'; //default header for X-DreamFactory-Application-Name
 
@@ -22,7 +22,7 @@
             var url = "";
             var data = {};
 
-            url = DREAM_FACTORY_URL + '/rest/qian/pecahan?ids='+uid;
+            url = DREAM_FACTORY_URL + '/rest/qian/akun?ids='+uid;
             data = {
 
                 "record": [
@@ -59,7 +59,7 @@
 
             if (aemethod == 'POST') {
                 var data = {};
-                url = DREAM_FACTORY_URL + '/rest/qian/pecahan'
+                url = DREAM_FACTORY_URL + '/rest/qian/akun'
                 data = {
                     "record": [
                         {
@@ -70,14 +70,15 @@
             }
             else
             {
-                //console.log (rowdata);
-                url = DREAM_FACTORY_URL + '/rest/qian/pecahan?ids='+rowdata.id;
+
+                url = DREAM_FACTORY_URL + '/rest/qian/akun?ids='+rowdata.uid;
                 data = {
 
                     "record": [
                         {
-                            "pecahan" : rowdata.pecahan,
-                            "currency_id" : rowdata.currency_id
+                            "akun_code" : rowdata.akun_code,
+                            "akun_group" : rowdata.akun_group,
+                            "akun_name" : rowdata.akun_name
 
                         },
 
@@ -109,30 +110,6 @@
 
         function initData(){
 
-            var sourceCurrency =
-            {
-                datatype: "json",
-                type : "GET",
-
-                datafields: [
-                    { name: 'id' },
-                    { name: 'curname' },
-                    { name: 'description' },
-                    { name: 'status'}
-
-                ],
-                id: 'id',
-                url: DREAM_FACTORY_URL+ "/rest/qian/currency?filter=nstatus%3D'ACTIVE'&order=curname",
-                root: 'record'
-            };
-
-            var dataAdapterCurrency = new $.jqx.dataAdapter(sourceCurrency, {
-                beforeSend: function (request) {
-                    request.setRequestHeader("X-DreamFactory-Application-Name", "myapp");
-
-
-                }
-            });
 
 
 
@@ -142,14 +119,13 @@
                 type : "GET",
 
                 datafields: [
-                    { name: 'curname' },
-                    { name: 'id' },
-                    { name: 'currency_id' },
-                    { name: 'pecahan' }
+                    { name: 'akun_code' },
+                    { name: 'akun_group' },
+                    { name: 'akun_name' }
 
                 ],
                 id: 'id',
-                url: DREAM_FACTORY_URL+ "/rest/qian/_proc/fetchPecahan",
+                url: DREAM_FACTORY_URL+ "/rest/qian/akun?filter=stats%3D'ACTIVE'&order=akun_code",
                 root: 'record',
                 updaterow: function (rowid, rowdata, commit) {
 
@@ -191,12 +167,9 @@
                     selectionmode: 'multiplecellsadvanced',
                     editmode: 'click',
                     columns: [
-                        { text: 'Mata Uang', dataField: 'currency_id', width: 100, displayfield:'curname', columntype: 'combobox',
-                            createeditor: function (row, value, editor) {
-                                editor.jqxComboBox({ source: dataAdapterCurrency, displayMember: 'curname', valueMember: 'id' });
-                            }
-                        },
-                        { text: 'Pecahan', dataField: 'pecahan', width: 150 },
+                        { text: 'Akun ID', dataField: 'akun_code', width: 150 },
+                        { text: 'Akun Group', dataField: 'akun_group', width: 100 },
+                        { text: 'Akun Name', dataField: 'akun_name', width: 300 },
 
                     ]
                 });
