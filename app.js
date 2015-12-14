@@ -22,7 +22,7 @@ MetronicApp.config(['$ocLazyLoadProvider', function($ocLazyLoadProvider) {
 }]);
 
 /********************************************
- BEGIN: BREAKING CHANGE in AngularJS v1.3.x:ready
+ BEGIN: BREAKING CHANGE in AngularJS v1.3.x:readyddd
  *********************************************/
 /**
  `$controller` will no longer look for controllers on `window`.
